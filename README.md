@@ -1,6 +1,20 @@
 # geotag_images
 Tool to add GPS data to images from a GPSlogger or Strava gps trace.
 
+## Prepare
+
+From the terminal:
+
+- install python3 
+- setup a virtual environment using: 
+`python3 -m venv <name_of_virtualenv>`
+- install dependencies: `pip install piexif timezonefinder pytz`
+- activate virtual environment: `source <name_of_virtualenv>/bin/activate`
+- run the script (see below)
+- deactivate the virtual environment using `deactivate`
+
+The virtual environment only needs to be created once and can be used again when running the script again.
+
 ## Run:
 `python main.py --input_location C:\for_example\image_folder --gpx_location C:\for_example\Strava_trace.gpx --gpx_source strava --correction '+00:01:00:00'`
 
