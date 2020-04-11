@@ -22,7 +22,6 @@ class GeotagImages:
         if self.source == 'gpslogger':
             gpx = self.gf.gpslogger_gpx_to_dictionary(self.gpx_location)
         if self.source == 'strava':
-            # TODO: seems that strava exports in UTC time, probably default for GPX format. Check
             gpx = self.gf.strava_gpx_to_dictionary(self.gpx_location)
         if gpx is None:
             self.logger.log_error('GPX file not loaded, choose "strava" or "gpslogger" as GPX source, exiting..')

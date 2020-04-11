@@ -1,3 +1,6 @@
+bokeh
+pandas
 piexif
 timezonefinder
 pytz
+pyproj

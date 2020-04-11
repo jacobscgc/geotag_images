@@ -14,5 +14,7 @@ class Settings:
         parser.add_argument('--gpx_source', default='strava', help='Source of gpx file: strave/gpslogger')
         parser.add_argument('--correction', help='A correction factor for the image time in the format +DD:HH:MM:SS',
                             default='+00:00:00:00')
+        parser.add_argument('--generate_map', default='no',
+                            help='Whether to generate a map of the images taken yes/no')
 
         return parser.parse_args()

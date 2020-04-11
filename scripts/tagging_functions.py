@@ -367,6 +367,24 @@ class GeotaggingFunctions:
         return_tuple = (dms_lat, dms_lon)
         return return_tuple
 
+    @staticmethod
+    def dms_to_decimal_degrees(dms):
+        """
+        This function converts a degrees, minutes, seconds (DMS) "((52, 1), (2, 1), (442104, 10000))" coordinate
+        to a decimal degree coordinate.
+
+        The decimal degree coordinate calculation (revert the calculation of the decimal_degrees_to_dms() function.
+        dd = float(string(dms[0][0]/DMS[0][1]) + '.' + str((dms[2][0]/dms[2][1]/60 + dms[1][0]/dms[1][1]) / 60)))
+
+        :param dms: notation of the coordinate as it can be used for exif data (lat, lon) tuple.
+        :return: latitude, longitude in decimal degrees
+        """
+        latitude = int(dms[0][0][0] / dms[0][0][1]) + (((dms[0][2][0] / dms[0][2][1] / 60) +
+                                                        dms[0][1][0] / dms[0][1][1]) / 60)
+        longitude = int(dms[1][0][0] / dms[1][0][1]) + (((dms[1][2][0] / dms[1][2][1] / 60) +
+                                                         dms[1][1][0] / dms[1][1][1]) / 60)
+        return latitude, longitude
+
 
 class Logging:
 
